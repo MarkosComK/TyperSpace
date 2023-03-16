@@ -1,0 +1,10 @@
+TyperSpace:
+    ✔ Get spriteSheet @done(23-03-16 07:32)
+    ✔ Setup files structure @done(23-03-16 07:32)
+    ✔ Set canvas background @done(23-03-16 07:32)
+    ✔ Set the player @done(23-03-16 08:17)
+    ✔ Set player move() @done(23-03-16 08:17)
+    ✔ make player modular @done(23-03-16 08:53)
+    ✔ Set limit to player X @done(23-03-16 08:53)
+    ✔ solve Background issue @done(23-03-16 10:49)
+    ✔ change player image @done(23-03-16 10:55)
