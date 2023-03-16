@@ -4,9 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            background: #0e0e0e;
+        }
+        canvas{
+            position: absolute;
+            border: 3px solid white;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        p{
+            color: #e2e2e2;
+        }
+    </style>
     <title>Document</title>
 </head>
 <body>
-    
+    <div>
+        <canvas></canvas>
+        <p>Game Speed: <span id="showGameSpeed"></span></p>
+        <input type="range" min="0" max="10" value="1">
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
