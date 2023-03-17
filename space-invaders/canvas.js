@@ -15,9 +15,12 @@ background.src = './folder/images/background.png'
 
 
 
+// export const words = [
+//     'MARKOS', 'JAVASCRIPT', 'PROGRAMMING', 'HTML',
+//     'CASCATING', 'MARKUP', 'LANGUAGE', 'CODE'
+// ]
 export const words = [
-    'MARKOS', 'JAVASCRIPT', 'PROGRAMMING', 'HTML',
-    'CASCATING', 'MARKUP', 'LANGUAGE', 'CODE'
+    'MARKOS', 'DANIELA', 'SOPHIA'
 ]
 
 
