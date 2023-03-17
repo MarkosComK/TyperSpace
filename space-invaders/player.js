@@ -1,23 +1,39 @@
 import { canvas, c } from "./canvas.js"
 
+
 const player = new Image()
-player.src = './folder/player.png'
+
+
+player.src = './folder/images/ship_1.png'
 
 export default class Player {
-    // moveR = false
-    // moveL = false
-    constructor(x = canvas.width/2, y = canvas.height-50){
+    constructor(x = canvas.width/2-25, y = canvas.height-68){
         this.x = x,
         this.y = y,
-        // this.moveR = this.moveR,
-        // this.moveL = this.moveL
-        
+        this.health = 10
+
         
         this.draw = () => {
-            c.drawImage(player, this.x, this.y, 32, 32)
-            // this.move()
+            c.drawImage(player, this.x, this.y, 50, 50)
+        }
+
+        this.update = () => {
+            c.clearRect(0, 0, 600, 600)
+            this.draw()
         }
         
+        this.life = () => {
+            c.beginPath()
+            c.fillStyle = '#43d364'
+            c.fillRect(0, canvas.height-15, this.health*60, 15)
+        }
+
+
+        this.getHit = () => {
+            this.health -= 1
+        }
+
+
         // document.addEventListener('keydown', (e) => {
         //     switch(e.code){
         //         case 'KeyA':
@@ -52,9 +68,5 @@ export default class Player {
         //     }
         // }
         
-        this.update = () => {
-            c.clearRect(0, 0, 600, 600)
-            this.draw()
-        }
     }
 }
