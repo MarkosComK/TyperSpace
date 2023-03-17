@@ -25,7 +25,7 @@ export default class Player {
         this.life = () => {
             c.beginPath()
             c.fillStyle = '#43d364'
-            c.fillRect(0, canvas.height-15, this.health*60, 15)
+            c.fillRect(0, canvas.height-15, this.health*50, 15)
         }
 
 
