@@ -8,3 +8,6 @@ TyperSpace:
     ✔ Set limit to player X @done(23-03-16 08:53)
     ✔ solve Background issue @done(23-03-16 10:49)
     ✔ change player image @done(23-03-16 10:55)
+shot:
+    ☐ create bullet
+    ☐ set bullet to spaceship
