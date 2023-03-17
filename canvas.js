@@ -15,13 +15,15 @@ background.src = './folder/images/background.png'
 
 
 
-// export const words = [
-//     'MARKOS', 'JAVASCRIPT', 'PROGRAMMING', 'HTML',
-//     'CASCATING', 'MARKUP', 'LANGUAGE', 'CODE'
-// ]
 export const words = [
-    'MARKOS', 'DANIELA', 'SOPHIA'
+    'MARKOS', 'JAVASCRIPT', 'FUNCTION', 'HTML',
+    'CASCATING', 'MARKUP', 'LANGUAGE', 'CODE',
+    'HYPER', 'REACT', 'VANILLA', 'TYPE', 'SCRIPT',
+    'DIV', 'ROUTER', 'AXIOS', 'BROWSER'
 ]
+// export const words = [
+//     'MARKOS', 'DANIELA', 'SOPHIA'
+// ]
 
 
 export const player = new Player()
