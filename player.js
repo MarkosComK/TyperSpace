@@ -1,12 +1,13 @@
-import { canvas, c, enemy, pause } from "./canvas.js"
+import { canvas, c, enemy, pause, score, scoreDiv } from "./canvas.js"
+import { points } from "./enemy.js"
 
 const player = new Image()
 
-
+export var gameOver = false
 
 player.src = './folder/images/ship_1.png'
 export default class Player {
-    constructor(x = canvas.width/2-25, y = canvas.height-68){
+    constructor(x = canvas.width/2-24, y = canvas.height-68){
         this.x = x,
         this.y = y,
         this.health = 10
@@ -29,7 +30,12 @@ export default class Player {
 
 
         this.getHit = () => {
-            this.health -= 1
+            score.innerHTML = points
+            gameOver = true
+        }
+        this.exitGameOver = () => {
+            gameOver = false
+            scoreDiv.classList.remove('gameOver')
         }
 
         this.fire = () => {

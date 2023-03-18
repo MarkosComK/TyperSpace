@@ -10,7 +10,7 @@ export class Projectile {
     constructor(endPoint, multiplyer){
         this.x = canvas.width/2 
         this.y = canvas.height-30
-        this.endPoint = endPoint+90
+        this.endPoint = endPoint+110
         this.endPointChange = 1 * 1
 
         this.drawProjectil = () => {

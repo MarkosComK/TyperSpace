@@ -11,10 +11,15 @@
     <title>TyperSpace</title>
 </head>
 <body>
-    <div>
-        <h1>click or press enter to start</h1>
+    <div class="wrapper">
+        <div>
+            <h1>click or press enter to start</h1>
+        </div>
+        <div class="score-flex">
+            <div class="score">your score: <span id="score">0</span></div>
+        </div>
+        <canvas></canvas>
     </div>
-    <canvas></canvas>
     <script type="module" src="background.js"></script>
     <script type="module" src="player.js"></script>
     <script type="module" src="enemy.js"></script>

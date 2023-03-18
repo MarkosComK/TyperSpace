@@ -1,6 +1,7 @@
 import Player from "./player.js"
 import { Enemy } from "./enemy.js"
 import { gameLayers } from "./background.js"
+import { gameOver } from "./player.js"
 
 export const canvas = document.querySelector('canvas')
 
@@ -40,11 +41,23 @@ canvas.addEventListener('click', (e) => {
 document.addEventListener('keydown', (e) => {
     if(e.key == 'Enter'){
         pause = !pause
+        enemy.turnZero()
+        player.exitGameOver()
     }
 })
 
+
+export const score = document.querySelector('#score')
+export let scoreDiv = document.querySelector('.score-flex')
+
 function game(){
-    if(pause){
+    if(gameOver){
+        scoreDiv.classList.add('gameOver')
+        bgMusic.pause()
+        gameLayers.forEach((layer) => {
+            layer.draw()
+        })
+    } else if(pause){
         bgMusic.pause()
         gameLayers.forEach((layer) => {
             layer.draw()
@@ -64,16 +77,16 @@ function game(){
             layer.update()
             layer.draw()
         })
+        //draw each projectil on screen
+        projectils.forEach((projectil) => {
+            projectil.drawProjectil()
+        })
     
         // draw enemy and player
         enemy.draw()
         player.draw()
         player.fire()
     
-        //draw each projectil on screen
-        projectils.forEach((projectil) => {
-            projectil.drawProjectil()
-        })
         // play each audio
         shotAudios.forEach((shot) => {
             shot.play()
