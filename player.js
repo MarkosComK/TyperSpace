@@ -1,4 +1,4 @@
-import { canvas, c, enemy } from "./canvas.js"
+import { canvas, c, enemy, pause } from "./canvas.js"
 
 const player = new Image()
 
@@ -35,7 +35,6 @@ export default class Player {
         this.fire = () => {
             document.addEventListener('keydown', (e) => {
                 enemy.removeLetter(e)
-                this.getWord()
             })
         }
 

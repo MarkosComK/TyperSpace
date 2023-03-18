@@ -8,6 +8,8 @@ const backgroundLayer2 = new Image()
 backgroundLayer2.src = './folder/images/background2.png'
 const backgroundLayer3 = new Image()
 backgroundLayer3.src = './folder/images/background3.png'
+const backgroundLayer4 = new Image()
+backgroundLayer4.src = './folder/images/background4.png'
 
 class Layer {
     constructor(image, speedModifier){
@@ -39,6 +41,7 @@ const layer0 = new Layer(backgroundLayer0, 0.2)
 const layer1 = new Layer(backgroundLayer1, 0.4)
 const layer2 = new Layer(backgroundLayer2, 0.6)
 const layer3 = new Layer(backgroundLayer3, 0.8)
+const layer4 = new Layer(backgroundLayer4, 1)
 
 
-export const gameLayers = [layer0, layer1, layer2, layer3]
+export const gameLayers = [layer0, layer1, layer2, layer3, layer4]

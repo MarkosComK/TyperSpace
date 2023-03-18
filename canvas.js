@@ -14,7 +14,8 @@ export const words = [
     'MARKOS', 'JAVASCRIPT', 'FUNCTION', 'HTML',
     'CASCATING', 'MARKUP', 'LANGUAGE', 'CODE',
     'HYPER', 'REACT', 'VANILLA', 'TYPE', 'SCRIPT',
-    'DIV', 'ROUTER', 'AXIOS', 'BROWSER'
+    'DIV', 'ROUTER', 'AXIOS', 'BROWSER', 'TYPESCRIPT',
+    'STYLED', 'DEVELOPER', 'API', 'PROGRESSIVE'
 ]
 
 
@@ -29,32 +30,55 @@ export const shotAudios = []
 // background music
 const bgMusic = new Audio('./folder/sounds/bgmusic.mp3')
 
-
+// pauses the game
+const playBtn = new Image()
+playBtn.src = './folder/images/icon-play.png'
+export let pause = true
+canvas.addEventListener('click', (e) => {
+    pause = !pause
+})
+document.addEventListener('keydown', (e) => {
+    if(e.key == 'Enter'){
+        pause = !pause
+    }
+})
 
 function game(){
-    // restart music if isn`t playing
-    if(!(bgMusic.play())){
+    if(pause){
+        bgMusic.pause()
+        gameLayers.forEach((layer) => {
+            layer.draw()
+        })
+        c.font = '90px Trebuchet MS'
+        c.fillStyle = 'white'
+        c.textAlign = 'center'
+        c.fillText('TYPERS', canvas.width/2, canvas.height/2)
+        player.draw()
+    } else {
+        // restart music if isn`t playing
+
         bgMusic.play()
+
+        // acess and draw each BG layer
+        gameLayers.forEach((layer) => {
+            layer.update()
+            layer.draw()
+        })
+    
+        // draw enemy and player
+        enemy.draw()
+        player.draw()
+        player.fire()
+    
+        //draw each projectil on screen
+        projectils.forEach((projectil) => {
+            projectil.drawProjectil()
+        })
+        // play each audio
+        shotAudios.forEach((shot) => {
+            shot.play()
+        })
     }
-    // acess and draw each BG layer
-    gameLayers.forEach((layer) => {
-        layer.update()
-        layer.draw()
-    })
-
-    // draw enemy and player
-    enemy.draw()
-    player.draw()
-    player.fire()
-
-    //draw each projectil on screen
-    projectils.forEach((projectil) => {
-        projectil.drawProjectil()
-    })
-    // play each audio
-    shotAudios.forEach((shot) => {
-        shot.play()
-    })
 }
 
 
