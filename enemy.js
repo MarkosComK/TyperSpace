@@ -2,6 +2,8 @@ import { canvas, c, randomInt, words, player, projectils, shotAudios} from "./ca
 import { Projectile } from "./shot.js"
 
 export let letter = 0
+
+
 export  class Enemy {
     constructor(x, y, word){
         this.x = canvas.width/2
@@ -21,15 +23,14 @@ export  class Enemy {
             this.getWord()
         }
 
-
-        document.addEventListener('keydown', (e) => {
+        this.removeLetter = (e) => {
             if(e.key.toUpperCase() == this.arr[letter]){
                 this.arr.shift()
                 projectils.push(new Projectile(this.y, this.speedMultiplyer))
                 shotAudios.push(new Audio('./folder/sounds/synth_laser_02.ogg'))
             }
             this.getWord()
-        })
+        }
 
         this.getWord = () => {
             if(this.y > canvas.height){

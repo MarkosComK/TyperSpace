@@ -1,5 +1,4 @@
-import { canvas, c } from "./canvas.js"
-
+import { canvas, c, enemy } from "./canvas.js"
 
 const player = new Image()
 
@@ -31,6 +30,13 @@ export default class Player {
 
         this.getHit = () => {
             this.health -= 1
+        }
+
+        this.fire = () => {
+            document.addEventListener('keydown', (e) => {
+                enemy.removeLetter(e)
+                this.getWord()
+            })
         }
 
 
