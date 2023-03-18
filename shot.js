@@ -1,5 +1,10 @@
 import { canvas, c } from "./canvas.js"
-import { projectils } from "./canvas.js"
+import { projectils, shotAudios } from "./canvas.js"
+
+const shot = new Image()
+shot.src = './folder/images/shot01.png'
+
+
 
 export class Projectile {
     constructor(endPoint, multiplyer){
@@ -9,9 +14,7 @@ export class Projectile {
         this.endPointChange = 1 * 1
 
         this.drawProjectil = () => {
-            c.beginPath()
-            c.fillStyle = 'pink'
-            c.fillRect(canvas.width/2+14, this.y-30, 4, 12)
+            c.drawImage(shot, canvas.width/2, this.y-60, 4, 12)
             this.update()
         }
 
@@ -20,6 +23,7 @@ export class Projectile {
                 this.y -= 20 
             } else {
                 projectils.shift()
+                shotAudios.shift()
             }
         }
     }

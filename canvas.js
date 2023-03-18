@@ -29,9 +29,9 @@ export const words = [
 export const player = new Player()
 const lifeInput = document.querySelector('#playerLife')
 export const projectils = []
+export const shotAudios = []
+const bgMusic = new Audio('./folder/sounds/bgmusic.mp3')
 
-export const shotAudio = new Audio('./folder/sounds/laser1.wav')
-shotAudio.volume = 0.1
 
 const enemy = new Enemy(randomInt(0, canvas.width-100), 0, words[randomInt(0, 7)])
 
@@ -84,6 +84,9 @@ const gameLayers = [layer0, layer1, layer2, layer3]
 
 
 function game(){
+    if(!(bgMusic.play())){
+        bgMusic.play()
+    }
     // c.drawImage(background, 0, 0, canvas.width, canvas.height)
     gameLayers.forEach((layer) => {
         layer.update()
@@ -94,6 +97,9 @@ function game(){
     player.life()
     projectils.forEach((projectil) => {
         projectil.drawProjectil()
+    })
+    shotAudios.forEach((shot) => {
+        shot.play()
     })
 }
 

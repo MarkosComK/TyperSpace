@@ -1,4 +1,4 @@
-import { canvas, c, randomInt, words, player, projectils, shotAudio} from "./canvas.js"
+import { canvas, c, randomInt, words, player, projectils, shotAudios} from "./canvas.js"
 import { Projectile } from "./shot.js"
 
 export let letter = 0
@@ -26,7 +26,7 @@ export  class Enemy {
             if(e.key.toUpperCase() == this.arr[letter]){
                 this.arr.shift()
                 projectils.push(new Projectile(this.y, this.speedMultiplyer))
-                shotAudio.play()
+                shotAudios.push(new Audio('./folder/sounds/synth_laser_02.ogg'))
             }
             this.getWord()
         })
@@ -38,8 +38,8 @@ export  class Enemy {
             }
             if(this.arr.length == 0 || this.y > canvas.height){
                 this.arr = words[randomInt(0, words.length)].split('')
-                this.y = -15
-                this.speedMultiplyer *= 1.2
+                this.y = -100
+                this.speedMultiplyer += 0.1
             }
         }
     }

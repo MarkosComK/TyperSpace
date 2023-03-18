@@ -4,8 +4,8 @@ import { canvas, c } from "./canvas.js"
 const player = new Image()
 
 
-player.src = './folder/images/ship_1.png'
 
+player.src = './folder/images/ship_1.png'
 export default class Player {
     constructor(x = canvas.width/2-25, y = canvas.height-68){
         this.x = x,
